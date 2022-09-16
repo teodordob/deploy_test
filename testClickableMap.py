@@ -42,13 +42,14 @@ df = geo_df1.assign(location=[*zip(geo_df1.Latitude, geo_df1.Longitude)])
 
 suppliers = df['location'].to_numpy()
 
-# Create the hyperlink for the markers
-href_b = "<a href="
+# Create the hyperlink for the markers to open in new tab
+href_b = "<a href=\""
+newtab = "target=\"_blank\""
 href_e = "</a>"
 goog = "https://en.wikipedia.org/wiki/"
 
 # Turns the text field of the df into the hyperlink
-df['Text'] = href_b + goog + df['City'] + ">" + df['City'] + href_e
+df['Text'] = href_b + goog + df['City'] + "\"" + newtab + ">" + df['City'] + href_e
 
 # Create markers for each row.
 for i, r in df.iterrows():
@@ -62,6 +63,10 @@ for i, r in df.iterrows():
 clients = [(48.85, 2.35), (43.29, 5.36)]
 supplier = (52.37, 4.9)
 
+#Test where to host reports
+# folium.Marker(location= (50.2, 6.2),
+#               popup ="<a href=https://docs.google.com/document/d/1y_nfVYQSOilXw5QEBSPsbSUTVIWSB6zfTRy0G90ThHM/edit#heading=h.fiv0nwfsm6l9>Place Guillaume II</a>",
+#               tooltip="Testvai").add_to(m)
 
 # Colors based on how sustainable can stuff be
 
@@ -74,4 +79,4 @@ print(suppliers)
 
 
 # Save the map to an html
-m.save('testMap.html')
+m.save('index.html')
