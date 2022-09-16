@@ -62,10 +62,6 @@ for i, r in df.iterrows():
 clients = [(48.85, 2.35), (43.29, 5.36)]
 supplier = (52.37, 4.9)
 
-#Test where to host reports
-folium.Marker(location= (50.2, 6.2),
-              popup ="<a href=https://docs.google.com/document/d/1y_nfVYQSOilXw5QEBSPsbSUTVIWSB6zfTRy0G90ThHM/edit#heading=h.fiv0nwfsm6l9>Place Guillaume II</a>",
-              tooltip="Testvai").add_to(m)
 
 # Colors based on how sustainable can stuff be
 
